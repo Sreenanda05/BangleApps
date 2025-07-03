@@ -6,7 +6,7 @@
   "description": "Tracks heart-rate & motion, classifies sleep phases, streams JSON over BLE.",
   "icon": "app.png",
   "tags": "sleep,health",
-  "supports": ["BANGLEJS2"],
+  "supports": ["BANGLEJS","BANGLEJS2"],
   "storage": [
     { "name": "sleeptrack.app.js", "url": "app.js" },
     { "name": "sleeptrack.img",    "url": "app-icon.js", "evaluate": true }
