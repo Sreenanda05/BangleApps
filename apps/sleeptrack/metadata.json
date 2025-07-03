@@ -11,8 +11,4 @@
     { "name": "sleeptrack.app.js", "url": "app.js" },
     { "name": "sleeptrack.img",    "url": "app-icon.js", "evaluate": true }
   ]
-  /* If you later add docs:
-     ,
-     "readme": "README.md"
-  */
 }
