@@ -158,7 +158,7 @@ function startHRM(){
   let last = 0;
   Bangle.on("HRM", function(h){
     smoothedHR = h.bpm;                         // always visible
-    if (h.confidence > 50){                     // looser gate
+    if (h.confidence > 80){                     // looser gate
       gotHR = true;
       const f = lpf(h.bpm, last);  last = f;
       smoothedHR = slide(hrWindow, f, WINDOW_SIZE);
