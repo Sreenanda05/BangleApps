@@ -15,7 +15,10 @@ NRF.on("disconnect", function () {
   print("🔌 BLE disconnected");
 });
 
-// Advertise UART with friendly name
+// ✅ Force the built-in UART service to be exposed
+NRF.setServices(undefined, { uart: true });
+
+// ✅ Advertise UART with friendly name
 NRF.setAdvertising(
   {},
   {
@@ -27,15 +30,15 @@ NRF.setAdvertising(
 /* ========= 3 ── JSON line helper ========= */
 function sendBLEData(obj) {
   if (!bleConnected) {
-    print("⚠️ Not connected, skip send:", JSON.stringify(obj));
+    print("⚀ Not connected, skip send:", JSON.stringify(obj));
     return;
   }
   const str = JSON.stringify(obj);
-  print("⬆️ Sending:", str);    // ← See exactly what’s being sent
-  Bluetooth.println(str);        // ← This always sends with a newline!
+  print("⬆️ Sent:", str);   // Debug: see exactly what's sent
+  Bluetooth.println(str);   // auto-adds \n
 }
 
-/* ========= 4 ── Debug ping every 8 s ========= */
+/* ========= 4 ── Debug ping every 8s ========= */
 setInterval(() => {
   sendBLEData({ debug: "ping", t: Math.round(Date.now() / 1000) });
 }, 8000);
