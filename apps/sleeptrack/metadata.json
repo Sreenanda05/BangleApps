@@ -1,7 +1,7 @@
 {
   "id": "sleeptrack",
   "name": "Sleep Tracker",
-  "shortName": "S-Track",         
+  "shortName": "S-Track",          
   "version": "0.01",
   "description": "Tracks heart-rate & motion, classifies sleep phases, streams JSON over BLE.",
   "icon": "app.png",
@@ -11,7 +11,7 @@
     {
       "name": "sleeptrack.app.js",
       "url": "app.js",
-      "evaluate": true         
+      "evaluate": true           
     },
     {
       "name": "sleeptrack.img",
