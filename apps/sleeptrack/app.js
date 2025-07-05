@@ -6,7 +6,13 @@ const NUS_TX_CHAR_UUID = "6E400003-B5A3-F393-E0A9-E50E24DCCA9E";
 let bleConnected = false;
 NRF.on("connect", function() {
   bleConnected = true;
-  print("✅ BLE connected");
+  print("✅ BLE connected by app!");
+  // draw confirmation on the watch display
+  g.clear();
+  g.setFont("6x8", 2);
+  g.setFontAlign(0, 0);
+  g.drawString("App connected!", g.getWidth()/2, g.getHeight()/2);
+  g.flip();
 });
 NRF.on("disconnect", function() {
   bleConnected = false;
