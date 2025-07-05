@@ -1,14 +1,22 @@
 {
   "id": "sleeptrack",
   "name": "Sleep Tracker",
-  "shortName": "Sleep",
+  "shortName": "S-Track",           // so it doesn’t collide
   "version": "0.01",
   "description": "Tracks heart-rate & motion, classifies sleep phases, streams JSON over BLE.",
   "icon": "app.png",
   "tags": "sleep,health",
   "supports": ["BANGLEJS","BANGLEJS2"],
   "storage": [
-    { "name": "sleeptrack.app.js", "url": "app.js" },
-    { "name": "sleeptrack.img",    "url": "app-icon.js", "evaluate": true }
+    {
+      "name": "sleeptrack.app.js",
+      "url": "app.js",
+      "evaluate": true           // <-- this bit is required!
+    },
+    {
+      "name": "sleeptrack.img",
+      "url": "app-icon.js",
+      "evaluate": true
+    }
   ]
 }
