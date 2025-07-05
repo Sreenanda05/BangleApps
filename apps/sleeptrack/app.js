@@ -7,6 +7,18 @@ let bleConnected = false;
 
 NRF.on("connect", function () {
   bleConnected = true;
+  print("✅ BLE connected by app!");
+  // Draw confirmation on screen
+  g.clear();
+  g.setFont("6x8", 2);
+  g.setFontAlign(0, 0);
+  g.drawString("App connected!", g.getWidth()/2, g.getHeight()/2);
+  g.flip();
+});
+
+
+NRF.on("connect", function () {
+  bleConnected = true;
   print("✅ BLE connected");
 });
 
