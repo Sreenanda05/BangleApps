@@ -32,10 +32,6 @@ function sendBLEData(obj) {
   Bluetooth.println(str);
 }
 
-/* ========= 4 ── Debug ping every 8s ========= */
-setInterval(function() {
-  sendBLEData({ debug: "ping", t: Math.round(Date.now() / 1000) });
-}, 8000);
 
 /* ========= 5 ── Widgets & basic state ========= */
 Bangle.loadWidgets();
